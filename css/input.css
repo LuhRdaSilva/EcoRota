@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-eco-primaria: #1B6B2E;      /* Verde Floresta */
+  --color-eco-secundaria: #1C5D6B;    /* Azul-Petróleo Profundo */
+  --color-eco-destaque: #52A636;      /* Verde Folha Vibrante */
+  --color-eco-fundo: #F4F7F6;         /* Branco Gelo / Neve */
+  --color-eco-texto: #1E293B;         /* Cinza Grafite Escuro */
+  --color-eco-suave: #E8F3EC;         /* Verde Menta Claro (Fundos suaves e tags) */
+  --color-eco-borda-suave: #CBE3D4;   /* Verde Água Claro (Bordas e links do rodapé) */
+}
