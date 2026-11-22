@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoRota: Plataforma web para mapeamento e descarte consciente de resíduos especiais em Chapecó.">
+    <title>EcoRota - Início | Descarte Consciente de Resíduos Especiais</title>
+    <link rel="icon" type="image/jpeg" href="imagens/iconeEcoRota.jpeg">
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<body class="bg-eco-fundo text-eco-texto font-sans min-h-screen flex flex-col">
+
+    <!-- Cabeçalho e Navegação Principal -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 px-6 py-3 flex flex-wrap justify-center items-center gap-6 md:gap-16">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagens/logoEcoRota.jpeg" alt="Logo EcoRota" class="h-12 w-auto">
+            </a>
+        </div>
+        <nav aria-label="Navegação Principal">
+            <ul class="flex flex-wrap justify-center gap-3 md:gap-8 font-semibold text-sm md:text-base">
+                <li><a href="index.html" aria-current="page" class="bg-eco-primaria text-white px-4 py-2 rounded-md">Início</a></li>
+                <li><a href="buscar.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Buscar</a></li>
+                <li><a href="guia.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Guia</a></li>
+                <li><a href="indique.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Indique</a></li>
+                <li><a href="contato.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-8">
+        
+        <!-- Seção Hero / Barra de Busca Rápida -->
+        <section class="bg-gradient-to-br from-eco-suave to-eco-suave-azul border border-eco-borda-suave rounded-xl p-6 md:p-10 text-center mb-10" aria-labelledby="titulo-principal">
+            <h1 id="titulo-principal" class="text-2xl md:text-3xl font-bold text-eco-primaria mb-3">
+                ENCONTRE O DESCARTE CORRETO PERTO DE VOCÊ
+            </h1>
+            <p class="text-slate-600 max-w-2xl mx-auto mb-6 text-base md:text-lg">
+                Localize pontos de coleta seletiva para resíduos especiais e ajude a preservar o meio ambiente.
+            </p>
+
+            <form action="buscar.html" method="GET" class="bg-white p-4 md:p-6 rounded-lg shadow-md max-w-4xl mx-auto flex flex-col md:flex-row items-stretch md:items-end gap-4">
+                <div class="flex-1 text-left">
+                    <label for="select-residuo" class="block text-sm font-semibold text-eco-secundaria mb-1">Selecione o resíduo:</label>
+                    <select id="select-residuo" name="residuo" class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-eco-texto bg-white focus:outline-none focus:border-eco-primaria">
+                        <option value="" selected disabled>Selecione o resíduo</option>
+                        <option value="todos">Todos os resíduos</option>
+                        <option value="medicamentos">Medicamentos</option>
+                        <option value="pilhas">Pilhas e Baterias</option>
+                        <option value="oleo">Óleo de Cozinha</option>
+                        <option value="eletronicos">Eletrônicos</option>
+                    </select>
+                </div>
+
+                <div class="flex-1 text-left">
+                    <label for="select-bairro" class="block text-sm font-semibold text-eco-secundaria mb-1">Bairro:</label>
+                    <select id="select-bairro" name="bairro" class="w-full border border-slate-300 rounded-md px-3 py-2.5 text-eco-texto bg-white focus:outline-none focus:border-eco-primaria">
+                        <option value="" selected disabled>Bairro</option>
+                        <option value="todos">Todos os bairros</option>
+                        <option value="centro">Centro</option>
+                        <option value="efapi">Efapi</option>
+                        <option value="santa-maria">Santa Maria</option>
+                        <option value="jardim-italia">Jardim Itália</option>
+                        <option value="passo-dos-fortes">Passo dos Fortes</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="bg-eco-secundaria hover:bg-eco-destaque text-white font-bold px-6 py-2.5 rounded-md transition cursor-pointer">
+                    BUSCAR
+                </button>
+            </form>
+        </section>
+
+        <!-- Seção de Principais Categorias -->
+        <section class="mb-10" aria-labelledby="titulo-categorias">
+            <h2 id="titulo-categorias" class="text-xl md:text-2xl font-bold text-eco-secundaria mb-5">Principais Categorias</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <article class="bg-white border border-slate-200 border-t-4 border-t-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-eco-secundaria mb-2">💊 Medicamentos</h3>
+                        <p class="text-slate-600 text-sm mb-4">Remédios vencidos, fora de uso, cartelas e frascos contaminados.</p>
+                    </div>
+                    <a href="guia.html#medicamentos" class="text-eco-primaria font-semibold text-sm hover:underline">Saiba como descartar →</a>
+                </article>
+
+                <article class="bg-white border border-slate-200 border-t-4 border-t-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-eco-secundaria mb-2">🔋 Pilhas</h3>
+                        <p class="text-slate-600 text-sm mb-4">Pilhas comuns, alcalinas, recarregáveis e baterias portáteis.</p>
+                    </div>
+                    <a href="guia.html#pilhas" class="text-eco-primaria font-semibold text-sm hover:underline">Saiba como descartar →</a>
+                </article>
+
+                <article class="bg-white border border-slate-200 border-t-4 border-t-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-eco-secundaria mb-2">🛢️ Óleo</h3>
+                        <p class="text-slate-600 text-sm mb-4">Óleo vegetal residual de frituras armazenado em garrafas PET.</p>
+                    </div>
+                    <a href="guia.html#oleo" class="text-eco-primaria font-semibold text-sm hover:underline">Saiba como descartar →</a>
+                </article>
+
+                <article class="bg-white border border-slate-200 border-t-4 border-t-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-eco-secundaria mb-2">🖥️ Eletrônicos</h3>
+                        <p class="text-slate-600 text-sm mb-4">Celulares, cabos, carregadores, computadores e eletrodomésticos.</p>
+                    </div>
+                    <a href="guia.html#eletronicos" class="text-eco-primaria font-semibold text-sm hover:underline">Saiba como descartar →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="bg-white border-l-4 border-l-eco-secundaria rounded-lg p-6 md:p-8 shadow-sm" aria-labelledby="titulo-ods">
+            <h2 id="titulo-ods" class="text-xl font-bold text-eco-secundaria mb-2">Por que descartar corretamente?</h2>
+            <p class="text-slate-600 mb-4">
+                O descarte inadequado de materiais tóxicos contamina o solo e os lençóis freáticos. 
+                O <strong class="text-eco-texto">EcoRota</strong> conecta você aos Pontos de Entrega Voluntária da cidade, 
+                alinhado à <strong class="text-eco-texto">ODS 11 (Cidades e Comunidades Sustentáveis)</strong>.
+            </p>
+            <a href="indique.html" class="text-eco-primaria font-bold underline hover:text-eco-destaque">Conhece um ponto de coleta? Indique aqui</a>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-eco-secundaria text-white text-center py-6 px-4 mt-auto">
+        <p class="mb-1 text-sm">&copy; 2026 EcoRota - Todos os direitos reservados.</p>
+        <div class="text-sm font-semibold text-eco-borda-suave">
+            <a href="https://github.com/LuhRdaSilva/ecorota-web" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline">GitHub</a> |
+            <a href="contato.html" class="hover:text-white hover:underline">Contato</a>
+        </div>
+    </footer>
+
+</body>
+</html>

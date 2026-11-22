@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sugira ou cadastre um novo Ponto de Entrega Voluntária (PEV) de resíduos especiais na plataforma EcoRota.">
+    <title>EcoRota - Indique um Ponto de Coleta</title>
+    <link rel="icon" type="image/jpeg" href="imagens/iconeEcoRota.jpeg">
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<body class="bg-eco-fundo text-eco-texto font-sans min-h-screen flex flex-col">
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 px-6 py-3 flex flex-wrap justify-center items-center gap-6 md:gap-16">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagens/logoEcoRota.jpeg" alt="Logo EcoRota" class="h-12 w-auto">
+            </a>
+        </div>
+        <nav aria-label="Navegação Principal">
+            <ul class="flex flex-wrap justify-center gap-3 md:gap-8 font-semibold text-sm md:text-base">
+                <li><a href="index.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Início</a></li>
+                <li><a href="buscar.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Buscar</a></li>
+                <li><a href="guia.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Guia</a></li>
+                <li><a href="indique.html" aria-current="page" class="bg-eco-primaria text-white px-4 py-2 rounded-md">Indique</a></li>
+                <li><a href="contato.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 w-full max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Cabeçalho da Página -->
+        <section class="mb-6" aria-labelledby="titulo-indique">
+            <h1 id="titulo-indique" class="text-2xl md:text-3xl font-bold text-eco-primaria mb-2">Indique um Ponto de Coleta</h1>
+            <p class="text-slate-600">
+                Conhece alguma farmácia, supermercado, escola ou cooperativa que recebe resíduos especiais? 
+                Ou gerencia um estabelecimento que atua como Ponto de Entrega Voluntária (PEV)? 
+                Preencha o formulário abaixo para que nossa equipe valide e adicione o local ao mapa do <strong class="text-eco-texto">EcoRota</strong>.
+            </p>
+        </section>
+
+        <!-- Formulário de Indicação / Cadastro -->
+        <section class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-slate-200" aria-labelledby="titulo-form-indique">
+            <h2 id="titulo-form-indique" class="text-xl font-bold text-eco-secundaria mb-6">Dados do Ponto de Coleta</h2>
+
+            <form id="form-indique-ponto" action="#" method="POST" class="space-y-6">
+                
+                <!-- Grupo 1: Identificação do Local -->
+                <fieldset class="border border-slate-200 rounded-lg p-5 space-y-4">
+                    <legend class="font-bold text-eco-primaria px-2 text-sm md:text-base">1. Informações do Estabelecimento</legend>
+
+                    <div>
+                        <label for="nome-local" class="block font-semibold text-sm mb-1">Nome do Estabelecimento / Ecoponto: *</label>
+                        <input type="text" id="nome-local" name="nome_local" placeholder="Ex: Farmácia Central ou Ecoponto Comunitário" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria">
+                    </div>
+
+                    <div>
+                        <label for="tipo-local" class="block font-semibold text-sm mb-1">Tipo de Estabelecimento: *</label>
+                        <select id="tipo-local" name="tipo_local" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-eco-primaria">
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="farmacia">Farmácia / Drogaria</option>
+                            <option value="supermercado">Supermercado / Comércio</option>
+                            <option value="unidade-saude">Unidade Básica de Saúde (UBS)</option>
+                            <option value="cooperativa">Cooperativa de Reciclagem</option>
+                            <option value="escola-universidade">Escola / Universidade</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Grupo 2: Localização e Funcionamento -->
+                <fieldset class="border border-slate-200 rounded-lg p-5 space-y-4">
+                    <legend class="font-bold text-eco-primaria px-2 text-sm md:text-base">2. Endereço e Horário</legend>
+
+                    <div>
+                        <label for="endereco-local" class="block font-semibold text-sm mb-1">Endereço Completo (Rua, Número e Complemento): *</label>
+                        <input type="text" id="endereco-local" name="endereco_local" placeholder="Ex: Av. Getúlio Vargas, 1500" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria">
+                    </div>
+
+                    <div>
+                        <label for="bairro-local" class="block font-semibold text-sm mb-1">Bairro: *</label>
+                        <select id="bairro-local" name="bairro_local" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-eco-primaria">
+                            <option value="" selected disabled>Selecione o bairro</option>
+                            <option value="centro">Centro</option>
+                            <option value="efapi">Efapi</option>
+                            <option value="santa-maria">Santa Maria</option>
+                            <option value="jardim-italia">Jardim Itália</option>
+                            <option value="passo-dos-fortes">Passo dos Fortes</option>
+                            <option value="presidente-medici">Presidente Médici</option>
+                            <option value="sao-cristovao">São Cristóvão</option>
+                            <option value="outro">Outro bairro</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="horario-local" class="block font-semibold text-sm mb-1">Horário de Funcionamento: *</label>
+                        <input type="text" id="horario-local" name="horario_local" placeholder="Ex: Seg a Sex das 08h às 18h | Sáb das 08h às 12h" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria">
+                    </div>
+                </fieldset>
+
+                <!-- Grupo 3: Materiais Aceitos -->
+                <fieldset class="border border-slate-200 rounded-lg p-5 space-y-2.5">
+                    <legend class="font-bold text-eco-primaria px-2 text-sm md:text-base">3. Resíduos Aceitos no Local: *</legend>
+                    <p class="text-xs text-slate-500 mb-2">Marque todas as categorias que este ponto recebe:</p>
+
+                    <label class="flex items-center gap-2.5 text-sm cursor-pointer">
+                        <input type="checkbox" id="aceita-medicamentos" name="materiais_aceitos" value="medicamentos" class="accent-eco-primaria w-4 h-4">
+                        <span>💊 Medicamentos vencidos ou em desuso</span>
+                    </label>
+
+                    <label class="flex items-center gap-2.5 text-sm cursor-pointer">
+                        <input type="checkbox" id="aceita-pilhas" name="materiais_aceitos" value="pilhas" class="accent-eco-primaria w-4 h-4">
+                        <span>🔋 Pilhas e Baterias portáteis</span>
+                    </label>
+
+                    <label class="flex items-center gap-2.5 text-sm cursor-pointer">
+                        <input type="checkbox" id="aceita-oleo" name="materiais_aceitos" value="oleo" class="accent-eco-primaria w-4 h-4">
+                        <span>🛢️ Óleo de Cozinha usado</span>
+                    </label>
+
+                    <label class="flex items-center gap-2.5 text-sm cursor-pointer">
+                        <input type="checkbox" id="aceita-eletronicos" name="materiais_aceitos" value="eletronicos" class="accent-eco-primaria w-4 h-4">
+                        <span>🖥️ Eletrônicos</span>
+                    </label>
+                </fieldset>
+
+                <!-- Grupo 4: Dados de quem está indicando -->
+                <fieldset class="border border-slate-200 rounded-lg p-5 space-y-4">
+                    <legend class="font-bold text-eco-primaria px-2 text-sm md:text-base">4. Seus Dados (Para validação)</legend>
+
+                    <div>
+                        <label for="vinculo-indicador" class="block font-semibold text-sm mb-1">Qual o seu vínculo com o local? *</label>
+                        <select id="vinculo-indicador" name="vinculo_indicador" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-eco-primaria">
+                            <option value="morador">Sou morador / cidadão indicando um ponto</option>
+                            <option value="responsavel">Sou gerente / responsável pelo estabelecimento</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="nome-indicador" class="block font-semibold text-sm mb-1">Seu Nome: *</label>
+                        <input type="text" id="nome-indicador" name="nome_indicador" placeholder="Digite seu nome completo" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria">
+                    </div>
+
+                    <div>
+                        <label for="email-indicador" class="block font-semibold text-sm mb-1">Seu E-mail para contato: *</label>
+                        <input type="email" id="email-indicador" name="email_indicador" placeholder="seuemail@exemplo.com" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria">
+                    </div>
+
+                    <div>
+                        <label for="observacoes-local" class="block font-semibold text-sm mb-1">Observações adicionais (opcional):</label>
+                        <textarea id="observacoes-local" name="observacoes" rows="4" placeholder="Ex: O coletor fica logo na entrada da loja, aceita apenas eletrônicos de pequeno porte, etc." class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <button type="submit" class="bg-eco-secundaria hover:bg-eco-destaque text-white font-bold px-6 py-2.5 rounded-md transition cursor-pointer">
+                        Enviar Indicação
+                    </button>
+                    <button type="reset" class="border border-slate-300 text-slate-600 hover:bg-slate-100 font-semibold px-6 py-2.5 rounded-md transition cursor-pointer">
+                        Limpar Formulário
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-eco-secundaria text-white text-center py-6 px-4 mt-auto">
+        <p class="mb-1 text-sm">&copy; 2026 EcoRota - Todos os direitos reservados.</p>
+        <div class="text-sm font-semibold text-eco-borda-suave">
+            <a href="https://github.com/LuhRdaSilva/ecorota-web" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline">GitHub</a> |
+            <a href="contato.html" class="hover:text-white hover:underline">Contato</a>
+        </div>
+    </footer>
+
+</body>
+</html>

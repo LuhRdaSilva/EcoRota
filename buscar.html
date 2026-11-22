@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busque pontos de coleta seletiva e ecopontos para resíduos especiais por bairro e categoria.">
+    <title>EcoRota - Buscar Pontos de Coleta</title>
+    <link rel="icon" type="image/jpeg" href="imagens/iconeEcoRota.jpeg">
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<body class="bg-eco-fundo text-eco-texto font-sans min-h-screen flex flex-col">
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 px-6 py-3 flex flex-wrap justify-center items-center gap-6 md:gap-16">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagens/logoEcoRota.jpeg" alt="Logo EcoRota" class="h-12 w-auto">
+            </a>
+        </div>
+        <nav aria-label="Navegação Principal">
+            <ul class="flex flex-wrap justify-center gap-3 md:gap-8 font-semibold text-sm md:text-base">
+                <li><a href="index.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Início</a></li>
+                <li><a href="buscar.html" aria-current="page" class="bg-eco-primaria text-white px-4 py-2 rounded-md">Buscar</a></li>
+                <li><a href="guia.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Guia</a></li>
+                <li><a href="indique.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Indique</a></li>
+                <li><a href="contato.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-8">
+        
+        <h1 class="text-2xl md:text-3xl font-bold text-eco-primaria mb-2">Buscar Pontos de Coleta</h1>
+        <p class="text-slate-600 mb-6">Filtre por tipo de resíduo e bairro para encontrar o Ponto de Entrega Voluntária mais próximo.</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+            
+            <!-- Lateral Esquerda: Filtros -->
+            <aside class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 lg:col-span-1" aria-labelledby="titulo-filtros">
+                <h2 id="titulo-filtros" class="text-lg font-bold text-eco-secundaria mb-4 pb-2 border-b border-slate-200">FILTROS</h2>
+                
+                <form id="form-filtros" action="buscar.html" method="GET" class="space-y-5">
+                    
+                    <fieldset class="space-y-2">
+                        <legend class="font-bold text-sm text-eco-secundaria mb-2">MATERIAL:</legend>
+                        
+                        <label class="flex items-center gap-2 text-sm cursor-pointer">
+                            <input type="checkbox" id="filtro-oleo" name="material" value="oleo" class="accent-eco-primaria w-4 h-4">
+                            <span>🛢️ Óleo de Cozinha</span>
+                        </label>
+
+                        <label class="flex items-center gap-2 text-sm cursor-pointer">
+                            <input type="checkbox" id="filtro-baterias" name="material" value="pilhas" class="accent-eco-primaria w-4 h-4">
+                            <span>🔋 Pilhas e Baterias</span>
+                        </label>
+
+                        <label class="flex items-center gap-2 text-sm cursor-pointer">
+                            <input type="checkbox" id="filtro-medicamentos" name="material" value="medicamentos" class="accent-eco-primaria w-4 h-4">
+                            <span>💊 Medicamentos</span>
+                        </label>
+
+                        <label class="flex items-center gap-2 text-sm cursor-pointer">
+                            <input type="checkbox" id="filtro-eletronicos" name="material" value="eletronicos" class="accent-eco-primaria w-4 h-4">
+                            <span>🖥️ Eletrônicos</span>
+                        </label>
+                    </fieldset>
+
+                    <div>
+                        <label for="filtro-bairro" class="block font-bold text-sm text-eco-secundaria mb-1">BAIRRO:</label>
+                        <select id="filtro-bairro" name="bairro" class="w-full border border-slate-300 rounded-md px-3 py-2 text-sm bg-white focus:outline-none focus:border-eco-primaria">
+                            <option value="todos">Todos os bairros</option>
+                            <option value="centro">Centro</option>
+                            <option value="efapi">Efapi</option>
+                            <option value="santa-maria">Santa Maria</option>
+                            <option value="jardim-italia">Jardim Itália</option>
+                            <option value="passo-dos-fortes">Passo dos Fortes</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2 pt-2">
+                        <button type="submit" class="w-full bg-eco-secundaria hover:bg-eco-destaque text-white font-bold py-2.5 rounded-md transition cursor-pointer">
+                            FILTRAR
+                        </button>
+                        <button type="reset" class="w-full border border-slate-300 text-slate-600 hover:bg-slate-100 font-semibold py-2 rounded-md text-sm transition cursor-pointer">
+                            Limpar Filtros
+                        </button>
+                    </div>
+                </form>
+            </aside>
+
+            <!-- Área de Resultados -->
+            <section class="lg:col-span-3" aria-labelledby="titulo-resultados">
+                <h2 id="titulo-resultados" class="text-lg font-bold text-eco-secundaria mb-1">RESULTADO DA PESQUISA</h2>
+                <p class="text-sm text-slate-600 mb-5">Exibindo <strong class="text-eco-texto">4</strong> pontos de coleta encontrados:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                    <!-- Card 1 -->
+                    <article class="card-ecoponto bg-white border border-slate-200 border-l-4 border-l-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between" data-bairro="centro" data-materiais="medicamentos pilhas">
+                        <div>
+                            <h3 class="text-lg font-bold text-eco-primaria mb-2">Farmácia São João</h3>
+                            <p class="text-sm text-slate-700 mb-1"><strong>Endereço:</strong> Rua Índio Condá, 123 - Centro, Chapecó - SC</p>
+                            <p class="text-sm text-slate-700 mb-3"><strong>Horário:</strong> Seg a Sex: 08h às 20h | Sáb: 08h às 18h</p>
+                            <div class="mb-5">
+                                <strong class="text-xs uppercase tracking-wider text-slate-500 block mb-1.5">Aceita:</strong>
+                                <ul class="flex flex-wrap gap-2">
+                                    <li class="bg-eco-suave text-eco-primaria text-xs font-semibold px-3 py-1 rounded-full">💊 Medicamentos</li>
+                                    <li class="bg-eco-suave text-eco-primaria text-xs font-semibold px-3 py-1 rounded-full">🔋 Pilhas e Baterias</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Indio+Conda+123+Centro+Chapeco+SC" target="_blank" rel="noopener noreferrer" class="block text-center bg-eco-secundaria hover:bg-eco-destaque text-white font-semibold py-2.5 px-4 rounded-md text-sm transition">
+                            📍 Ver Rota no Mapa
+                        </a>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card-ecoponto bg-white border border-slate-200 border-l-4 border-l-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between" data-bairro="centro" data-materiais="oleo eletronicos">
+                        <div>
+                            <h3 class="text-lg font-bold text-eco-primaria mb-2">Posto de Coleta Ecológica</h3>
+                            <p class="text-sm text-slate-700 mb-1"><strong>Endereço:</strong> Rua Sete de Setembro, 450 - Centro, Chapecó - SC</p>
+                            <p class="text-sm text-slate-700 mb-3"><strong>Horário:</strong> Seg a Sáb: 08h às 18h</p>
+                            <div class="mb-5">
+                                <strong class="text-xs uppercase tracking-wider text-slate-500 block mb-1.5">Aceita:</strong>
+                                <ul class="flex flex-wrap gap-2">
+                                    <li class="bg-eco-suave text-eco-primaria text-xs font-semibold px-3 py-1 rounded-full">🛢️ Óleo de Cozinha</li>
+                                    <li class="bg-eco-suave text-eco-primaria text-xs font-semibold px-3 py-1 rounded-full">🖥️ Eletrônicos</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Sete+de+Setembro+450+Centro+Chapeco+SC" target="_blank" rel="noopener noreferrer" class="block text-center bg-eco-secundaria hover:bg-eco-destaque text-white font-semibold py-2.5 px-4 rounded-md text-sm transition">
+                            📍 Ver Rota no Mapa
+                        </a>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card-ecoponto bg-white border border-slate-200 border-l-4 border-l-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between" data-bairro="efapi" data-materiais="eletronicos pilhas">
+                        <div>
+                            <h3 class="text-lg font-bold text-eco-primaria mb-2">Ecoponto Comunitário Efapi</h3>
+                            <p class="text-sm text-slate-700 mb-1"><strong>Endereço:</strong> Av. Atílio Fontana, 2400 - Efapi, Chapecó - SC</p>
+                            <p class="text-sm text-slate-700 mb-3"><strong>Horário:</strong> Seg a Sex: 08h às 17h30</p>
+                            <div class="mb-5">
+                                <strong class="text-xs uppercase tracking-wider text-slate-500 block mb-1.5">Aceita:</strong>
+                                <ul class="flex flex-wrap gap-2">
+                                    <li class="bg-eco-suave text-eco-primaria text-xs font-semibold px-3 py-1 rounded-full">🖥️ Eletrônicos</li>
+                                    <li class="bg-eco-suave text-eco-primaria text-xs font-semibold px-3 py-1 rounded-full">🔋 Pilhas e Baterias</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av+Atilio+Fontana+2400+Efapi+Chapeco+SC" target="_blank" rel="noopener noreferrer" class="block text-center bg-eco-secundaria hover:bg-eco-destaque text-white font-semibold py-2.5 px-4 rounded-md text-sm transition">
+                            📍 Ver Rota no Mapa
+                        </a>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card-ecoponto bg-white border border-slate-200 border-l-4 border-l-eco-primaria rounded-lg p-6 shadow-sm flex flex-col justify-between" data-bairro="santa-maria" data-materiais="oleo">
+                        <div>
+                            <h3 class="text-lg font-bold text-eco-primaria mb-2">Cooperativa Verde Sustentável</h3>
+                            <p class="text-sm text-slate-700 mb-1"><strong>Endereço:</strong> Rua John Kennedy, 890 - Santa Maria, Chapecó - SC</p>
+                            <p class="text-sm text-slate-700 mb-3"><strong>Horário:</strong> Seg a Sex: 07h30 às 17h</p>
+                            <div class="mb-5">
+                                <strong class="text-xs uppercase tracking-wider text-slate-500 block mb-1.5">Aceita:</strong>
+                                <ul class="flex flex-wrap gap-2">
+                                    <li class="bg-eco-suave text-eco-primaria text-xs font-semibold px-3 py-1 rounded-full">🛢️ Óleo de Cozinha</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+John+Kennedy+890+Santa+Maria+Chapeco+SC" target="_blank" rel="noopener noreferrer" class="block text-center bg-eco-secundaria hover:bg-eco-destaque text-white font-semibold py-2.5 px-4 rounded-md text-sm transition">
+                            📍 Ver Rota no Mapa
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-eco-secundaria text-white text-center py-6 px-4 mt-auto">
+        <p class="mb-1 text-sm">&copy; 2026 EcoRota - Todos os direitos reservados.</p>
+        <div class="text-sm font-semibold text-eco-borda-suave">
+            <a href="https://github.com/LuhRdaSilva/ecorota-web" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline">GitHub</a> |
+            <a href="contato.html" class="hover:text-white hover:underline">Contato</a>
+        </div>
+    </footer>
+
+</body>
+</html>

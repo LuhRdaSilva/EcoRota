@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a equipe técnica do projeto EcoRota (UFFS Chapecó) e entre em contato para dúvidas, sugestões ou feedbacks.">
+    <title>EcoRota - Sobre e Contato</title>
+    <link rel="icon" type="image/jpeg" href="imagens/iconeEcoRota.jpeg">
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<body class="bg-eco-fundo text-eco-texto font-sans min-h-screen flex flex-col">
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 px-6 py-3 flex flex-wrap justify-center items-center gap-6 md:gap-16">
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagens/logoEcoRota.jpeg" alt="Logo EcoRota" class="h-12 w-auto">
+            </a>
+        </div>
+        <nav aria-label="Navegação Principal">
+            <ul class="flex flex-wrap justify-center gap-3 md:gap-8 font-semibold text-sm md:text-base">
+                <li><a href="index.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Início</a></li>
+                <li><a href="buscar.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Buscar</a></li>
+                <li><a href="guia.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Guia</a></li>
+                <li><a href="indique.html" class="text-eco-texto hover:bg-eco-fundo hover:text-eco-primaria px-4 py-2 rounded-md transition">Indique</a></li>
+                <li><a href="contato.html" aria-current="page" class="bg-eco-primaria text-white px-4 py-2 rounded-md">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 w-full max-w-4xl mx-auto px-4 py-8 space-y-8">
+
+        <!-- Seção 1: Sobre o Projeto e Equipe Técnica -->
+        <section class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-slate-200" aria-labelledby="titulo-sobre">
+            <h1 id="titulo-sobre" class="text-2xl md:text-3xl font-bold text-eco-primaria mb-4">Sobre o EcoRota</h1>
+            <p class="text-slate-600 mb-3 leading-relaxed">
+                O <strong class="text-eco-texto">EcoRota</strong> é uma plataforma web desenvolvida no curso de <strong class="text-eco-texto">Ciência da Computação</strong> 
+                da <strong class="text-eco-texto">Universidade Federal da Fronteira Sul (UFFS) – Campus Chapecó</strong>. 
+                Nosso objetivo é centralizar e facilitar o acesso às informações sobre Pontos de Entrega Voluntária (PEVs) 
+                de resíduos especiais, promovendo a logística reversa e a conscientização ambiental.
+            </p>
+            <p class="text-slate-600 mb-6 leading-relaxed">
+                A iniciativa está diretamente alinhada ao <strong class="text-eco-texto">Objetivo de Desenvolvimento Sustentável 11 (ODS 11 — Cidades e Comunidades Sustentáveis)</strong> 
+                da ONU, contribuindo para a redução do impacto ambiental urbano e a prevenção da contaminação do solo e das águas.
+            </p>
+
+            <div class="pt-5 border-t border-slate-200">
+                <h2 class="text-lg font-bold text-eco-secundaria mb-3">Equipe Técnica</h2>
+                <ul class="list-disc list-inside space-y-1.5 text-slate-700 text-sm md:text-base">
+                    <li>
+                        <strong>Lucas Rodrigues da Silva</strong> — Acadêmico de Ciência da Computação
+                    </li>
+                    <li>
+                        <strong>Prof. Fabrício Herpich</strong> — Professor Orientador (UFFS Campus Chapecó)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção 2: Formulário de Contato -->
+        <section class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-slate-200" aria-labelledby="titulo-form-contato">
+            <h2 id="titulo-form-contato" class="text-xl font-bold text-eco-secundaria mb-2">Fale Conosco</h2>
+            <p class="text-slate-600 text-sm mb-6">Tem alguma dúvida sobre o descarte de resíduos, encontrou alguma informação desatualizada ou quer enviar uma sugestão? Preencha o formulário abaixo:</p>
+
+            <form id="form-contato" action="#" method="POST" class="space-y-4">
+                
+                <div>
+                    <label for="nome-contato" class="block font-semibold text-sm mb-1">Seu Nome: *</label>
+                    <input type="text" id="nome-contato" name="nome" placeholder="Digite seu nome completo" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria">
+                </div>
+
+                <div>
+                    <label for="email-contato" class="block font-semibold text-sm mb-1">Seu E-mail: *</label>
+                    <input type="email" id="email-contato" name="email" placeholder="seuemail@exemplo.com" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria">
+                </div>
+
+                <div>
+                    <label for="assunto-contato" class="block font-semibold text-sm mb-1">Assunto: *</label>
+                    <select id="assunto-contato" name="assunto" required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm bg-white focus:outline-none focus:border-eco-primaria">
+                        <option value="" selected disabled>Selecione o motivo do contato</option>
+                        <option value="duvida">Dúvida sobre descarte de resíduos</option>
+                        <option value="atualizacao">Informar alteração em um ponto de coleta</option>
+                        <option value="sugestao">Sugestão ou Feedback para o site</option>
+                        <option value="parceria">Parceria / Estabelecimento Comercial</option>
+                        <option value="outro">Outro assunto</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="mensagem-contato" class="block font-semibold text-sm mb-1">Mensagem: *</label>
+                    <textarea id="mensagem-contato" name="mensagem" rows="5" placeholder="Escreva sua mensagem detalhada aqui..." required class="w-full border border-slate-300 rounded-md px-3.5 py-2.5 text-sm focus:outline-none focus:border-eco-primaria"></textarea>
+                </div>
+
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <button type="submit" class="bg-eco-secundaria hover:bg-eco-destaque text-white font-bold px-6 py-2.5 rounded-md transition cursor-pointer">
+                        Enviar Mensagem
+                    </button>
+                    <button type="reset" class="border border-slate-300 text-slate-600 hover:bg-slate-100 font-semibold px-6 py-2.5 rounded-md transition cursor-pointer">
+                        Limpar
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-eco-secundaria text-white text-center py-6 px-4 mt-auto">
+        <p class="mb-1 text-sm">&copy; 2026 EcoRota - Todos os direitos reservados.</p>
+        <div class="text-sm font-semibold text-eco-borda-suave">
+            <a href="https://github.com/LuhRdaSilva/ecorota-web" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:underline">GitHub</a> |
+            <a href="contato.html" class="hover:text-white hover:underline">Contato</a>
+        </div>
+    </footer>
+
+</body>
+</html>
