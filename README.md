@@ -2,7 +2,7 @@
 
 O **EcoRota** é um site que estou desenvolvendo para uma ativadade do componente curricular Introdução Ao Desenvolvimento Web, sua função é ajudar a encontrar pontos de coleta de resíduos (como medicamentos vencidos, óleo de cozinha, pilhas, baterias e lixo eletrônico). A ideia é facilitar o descarte correto no dia a dia e ajudar na sustentabilidade da cidade.
 
-## 🎨 Paleta de Cores (Sprint 2)
+## 🎨 Paleta de Cores
 
 Escolhi as cores do site me baseando nas cores da própria logo do projeto (que foi criado usando a IA LeonardoIA) e configurei classes usando o Tailwind.
 
@@ -38,3 +38,5 @@ Escolhi as cores do site me baseando nas cores da própria logo do projeto (que 
 ## 👨‍💻 Desenvolvedor
 - Lucas Rodrigues da Silva - Academico de Ciencia da Computação UFFS
 - Fabrício Herpich – Professor Orientador.
+
+🔗 **Repositório do Projeto:** [github.com/LuhRdaSilva/EcoRota](https://github.com/LuhRdaSilva/EcoRota)
